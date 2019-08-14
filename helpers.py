@@ -1,7 +1,6 @@
 from collections import defaultdict
 
 def prime_sieve(limit):
-    limit = limit
     prime_list = defaultdict(lambda: True)
     prime_list[0] = False
     prime_list[1] = False

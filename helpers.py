@@ -1,5 +1,14 @@
 from collections import defaultdict
 
+def fib(limit=None):
+    a, b = 1, 2
+    if limit is None:
+        limit = float('Inf')
+    while a < limit:
+        yield a
+        a, b = b, a + b
+        
+
 def prime_sieve(limit):
     prime_list = defaultdict(lambda: True)
     prime_list[0] = False

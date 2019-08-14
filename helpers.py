@@ -22,7 +22,6 @@ def prime_sieve(limit):
 
             
 def prime_factors(num):
-    max_limit = int(num**(1/2))
-    primes = prime_sieve(max_limit)
+    primes = prime_sieve(num + 1)
     factors = filter(lambda x: num % x == 0, primes)
     yield from factors

@@ -19,9 +19,10 @@ def prime_sieve(limit):
         yield i
         for j in range(2*i, limit, i):
             prime_list[j] = False
-
             
-def prime_factors(num):
-    primes = prime_sieve(num + 1)
+            
+def prime_factors(num, primes=None):
+    if primes == None:
+        primes = prime_sieve(num + 1)
     factors = filter(lambda x: num % x == 0, primes)
     yield from factors

@@ -1,4 +1,16 @@
+import string
 from collections import defaultdict
+from itertools import chain
+
+alpha_to_val_map = {alp: ord(alp.upper()) - 64 for alp in chain(string.ascii_uppercase, string.ascii_lowercase)}
+alpha_to_val = lambda alp: alpha_to_val_map[alp]
+
+
+def word_value(word):
+    vals = map(alpha_to_val, word)
+    value = sum(vals)
+    return value
+
 
 def fib(limit=None):
     a, b = 1, 2

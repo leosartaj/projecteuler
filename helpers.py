@@ -19,7 +19,7 @@ def fib(limit=None):
     while a < limit:
         yield a
         a, b = b, a + b
-        
+
 
 def prime_sieve(limit):
     prime_list = defaultdict(lambda: True)
@@ -31,8 +31,8 @@ def prime_sieve(limit):
         yield i
         for j in range(2*i, limit, i):
             prime_list[j] = False
-            
-            
+
+
 def prime_factors(num, primes=None):
     if primes == None:
         primes = prime_sieve(num + 1)

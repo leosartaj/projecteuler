@@ -38,3 +38,12 @@ def prime_factors(num, primes=None):
         primes = prime_sieve(num + 1)
     factors = filter(lambda x: num % x == 0, primes)
     yield from factors
+
+
+def is_palindrome(num):
+    num = str(num)
+    return num == num[::-1]
+
+
+def dec_to_binstr(num):
+    return bin(num)[2:]
